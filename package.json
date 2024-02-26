@@ -1,0 +1,15 @@
+{
+  "name": "api-portal",
+  "version": "1.0.0",
+  "description": "using google cloud as my hosting solution since we are working in DialogFlow witch is a google cloud product.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
