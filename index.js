@@ -330,6 +330,10 @@ const getRandom = (len) => {
   return random;
 };
 
+app.get("/", (req, res) => {
+  res.send("This is my API Portal");
+});
+
 app.get("/affirmations", (req, res) => {
   const random = getRandom(affirmations.length);
   const affirmation = affirmations[random];
