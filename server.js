@@ -658,6 +658,12 @@ app.get("/", (req, res) => {
 });
 
 app.get("/affirmations", (req, res) => {
+  res.status(200).send({
+    affirmations,
+  });
+});
+
+app.get("/affirmation", (req, res) => {
   const random = getRandom(affirmations.length);
   const affirmation = affirmations[random];
   res.status(200).send({
@@ -666,6 +672,12 @@ app.get("/affirmations", (req, res) => {
 });
 
 app.get("/journal-prompts", (req, res) => {
+  res.status(200).send({
+    journalPrompts,
+  });
+});
+
+app.get("/journal-prompt", (req, res) => {
   const random = getRandom(journalPrompts.length);
   const journalPrompt = journalPrompts[random];
   res.status(200).send({
