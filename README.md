@@ -16,11 +16,11 @@ Source: https://www.youtube.com/watch?v=LRfah-yXfgA&list=PL42xwJRIG3xCtmOrJAQFR5
 Creating a simple API in Node.js using a Express framework:
 Source: https://www.youtube.com/watch?v=-MTSQjw5DrM
 
-1. install node.js by running `npm init -y` to start a new node project.
-2. install express by running `npm install express`.
-3. create a server.js file to write the code.
-4. execute the server.js by running `node .`.
-5. use the tool Insomnia to test the API.
+1. install node.js by running `npm init -y` to start a new node project
+2. install express by running `npm install express`
+3. create a server.js file to write the code
+4. execute the server.js by running `node server.js`
+5. use the tool Insomnia to test the API
 6. create an app.yaml file so we can deploy to App Engine:
    ```
    # [START app_yaml]
