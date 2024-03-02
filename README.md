@@ -17,13 +17,12 @@ Source: https://www.youtube.com/watch?v=LRfah-yXfgA&list=PL42xwJRIG3xCtmOrJAQFR5
 # Creating a simple API in Node.js using a Express framework:
 
 1. create a directory on you local machine for your new project
-2. open VSCode and run `gcloud init` and select your project
-3. install node.js by running `npm init -y` to start a new node project
-4. install express by running `npm install express`
-5. create a server.js file to write the code
-6. execute the server.js by running `node server.js`
-7. use the tool Insomnia to test the API
-8. create an app.yaml file so we can deploy to App Engine:
+2. install node.js by running `npm init -y` to start a new node project
+3. install express by running `npm install express`
+4. create a server.js file to write the code
+5. execute the server.js by running `node server.js`
+6. use the tool Insomnia to test the API
+7. create an app.yaml file so we can deploy to App Engine:
    ```
    # [START app_yaml]
    runtime: nodejs20
@@ -34,6 +33,7 @@ Source: https://www.youtube.com/watch?v=-MTSQjw5DrM
 
 # Deploy the nodejs app:
 
-1. load a new terminal window in vs code
-2. run `gcloud app deploy` to deploy your application
-3. copy and paste the url to the web browser or run `gcloud app browse`
+1. load a new terminal window in VSCode
+2. run `gcloud init` and select your project
+3. run `gcloud app deploy` to deploy your application
+4. run `gcloud app browse` or copy and paste the url to the web browser
