@@ -29,4 +29,24 @@ router.get("/random", (req, res) => {
   }
 });
 
+router.get("/random/:type", (req, res) => {
+  const { type } = req.params;
+  const typeAffirmations = affirmations.filter(
+    (affirmation) => affirmation.type === type
+  );
+  if (typeAffirmations.length === 0) {
+    return res.status(404).send({
+      error:
+        "Type not found or no affirmations available for the specified type",
+    });
+  }
+
+  const random = getRandom(typeAffirmations.length);
+  const affirmation = typeAffirmations[random];
+
+  res.status(200).send({
+    affirmation,
+  });
+});
+
 module.exports = router;
