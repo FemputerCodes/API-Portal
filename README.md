@@ -19,10 +19,11 @@ Source: https://www.youtube.com/watch?v=LRfah-yXfgA&list=PL42xwJRIG3xCtmOrJAQFR5
 1. create a directory on you local machine for your new project
 2. install node.js by running `npm init -y` to start a new node project
 3. install express by running `npm install express`
-4. create a server.js file to write the code
-5. execute the server.js by running `node server.js`
-6. use the tool Insomnia to test the API
-7. create an app.yaml file so we can deploy to App Engine:
+4. install CORS for security by running `npm install cors`
+5. create a server.js file to write the code
+6. execute the server.js by running `node server.js`
+7. use the tool Insomnia to test the API
+8. create an app.yaml file so we can deploy to App Engine:
    ```
    # [START app_yaml]
    runtime: nodejs20
