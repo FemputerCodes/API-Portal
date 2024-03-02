@@ -1,7 +1,7 @@
 # Prerequisites
 
 download the gcloud SDK so you can interact with google cloud from your local machine so you can deploy .
-App Engine: A fully managed platform-as-a-service (PaaS) for deploying websites and APIs
+App Engine: A fully managed platform-as-a-service (PaaS) for deploying websites and APIs. App Engine expects your application to be able to handle requests on the port specified by the process.env.PORT variable.
 
 # Getting started with App Engine
 
