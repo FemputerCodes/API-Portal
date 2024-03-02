@@ -12,25 +12,27 @@ App Engine: A fully managed platform-as-a-service (PaaS) for deploying websites 
 5. select region (us-west1)
 6. selected Node.js as the language and keep standard environment
 
-Source: https://www.youtube.com/watch?v=LRfah-yXfgA&list=PL42xwJRIG3xCtmOrJAQFR5sIJFKIJ9MEn&index=1
-
 # Creating a simple API in Node.js using a Express framework:
 
 1. create a directory on you local machine for your new project
 2. install node.js by running `npm init -y` to start a new node project
 3. install express by running `npm install express`
 4. install CORS for security by running `npm install cors`
-5. create a server.js file to write the code
-6. execute the server.js by running `node server.js`
-7. use the tool Insomnia to test the API
-8. create an app.yaml file so we can deploy to App Engine:
+5. update package.json to include:
+   ```
+      "scripts": {
+         "start": "node server.js"
+      }
+   ```
+6. create an server.js file to write the code
+7. execute the app by running `npm start`
+8. use the tool Insomnia to test the API
+9. create an app.yaml file so we can deploy to App Engine:
    ```
    # [START app_yaml]
    runtime: nodejs20
    ```
    run node --version to get the version of nodejs
-
-Source: https://www.youtube.com/watch?v=-MTSQjw5DrM
 
 # Deploy the nodejs app:
 
@@ -38,3 +40,11 @@ Source: https://www.youtube.com/watch?v=-MTSQjw5DrM
 2. run `gcloud init` and select your project
 3. run `gcloud app deploy` to deploy your application
 4. run `gcloud app browse` or copy and paste the url to the web browser
+
+# Debugging:
+
+to debug errors, run `gcloud app logs read`
+
+# Sources:
+
+https://cloud.google.com/appengine/docs/standard/nodejs/runtime

@@ -1,7 +1,7 @@
 const express = require("express");
-const cors = require("cors");
-const affirmationRoutes = require("./routes/affirmation-routes");
 const app = express();
+const cors = require("cors");
+const affirmationRoutes = require("./src/routes/affirmation-routes");
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
