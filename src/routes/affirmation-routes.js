@@ -1,7 +1,7 @@
 const express = require("express");
 const affirmations = require("../data/affirmations");
 const router = express.Router();
-const { getRandom } = require("../util/util");
+const { getRandom } = require("../utils/utils");
 
 router.get("/", (req, res) => {
   res.status(200).send({
