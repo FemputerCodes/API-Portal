@@ -6,4 +6,19 @@ const getRandom = (len) => {
   return Math.floor(Math.random() * len);
 };
 
-module.exports = { getRandom };
+const filterStepBacks = (param, filteredStepBacks) => {
+  console.log("param: ", param);
+  // param is location
+  if (param === "indoor" || param === "outdoor") {
+    return filteredStepBacks.filter((stepBack) => stepBack.location === param);
+  }
+  // param is type
+  if (param === "inactive" || param === "active") {
+    return filteredStepBacks.filter((stepBack) => stepBack.type === param);
+  }
+  // param is length
+  if (param === "short" || param === "long") {
+    return filteredStepBacks.filter((stepBack) => stepBack.length === param);
+  }
+};
+module.exports = { getRandom, filterStepBacks };

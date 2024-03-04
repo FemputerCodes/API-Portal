@@ -1,7 +1,7 @@
 const express = require("express");
 const stepBacks = require("../data/step-backs");
 const router = express.Router();
-const { getRandom } = require("../utils/utils");
+const { getRandom, filterStepBacks } = require("../utils/utils");
 
 router.get("/", (req, res) => {
   res.status(200).send({
@@ -29,29 +29,32 @@ router.get("/random", (req, res) => {
   }
 });
 
-router.get("/random/:param", (req, res) => {
-  const { param } = req.params;
-  let paramStepBacks = "";
+router.get("/random/:param1?/:param2?/:param3?", (req, res) => {
+  const { param1, param2, param3 } = req.params;
+  let filteredStepBacks = stepBacks;
 
-  // check if param is location
-  if (param === "indoor" || param === "outdoor") {
-    paramStepBacks = stepBacks.filter(
-      (stepBack) => stepBack.location === param
-    );
-  } else if (param === "active" || param === "inactive") {
-    paramStepBacks = stepBacks.filter((stepBack) => stepBack.type === param);
-  } else if (param === "short" || param === "long") {
-    paramStepBacks = stepBacks.filter((stepBack) => stepBack.length === param);
+  console.log("param1: ", param1);
+  console.log("param2: ", param2);
+  console.log("param3: ", param3);
+
+  if (param1) {
+    filteredStepBacks = filterStepBacks(param1, filteredStepBacks);
   }
-  if (paramStepBacks.length === 0) {
-    return res.status(404).send({
-      error:
-        "Parameter not found or no step backs available for the specified paramter",
+  if (param2) {
+    filteredStepBacks = filterStepBacks(param2, filteredStepBacks);
+  }
+  if (param3) {
+    filteredStepBacks = filterStepBacks(param3, filteredStepBacks);
+  }
+
+  if (filteredStepBacks.length === 0) {
+    return res.status(400).send({
+      error: "Location, type, or length not found or no step back available",
     });
   }
 
-  const random = getRandom(paramStepBacks.length);
-  const stepBack = paramStepBacks[random];
+  const random = getRandom(filteredStepBacks.length);
+  const stepBack = filteredStepBacks[random];
 
   res.status(200).send({
     stepBack,
